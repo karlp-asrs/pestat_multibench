@@ -122,7 +122,7 @@ pestat_multibench=function(cfl,indl) {
   #indl is a list of total return indices
   if(length(cfl)!=length(indl)) stop("length of cash flow and index lists not the same")
   n=length(cfl)
-  fv1=zoo(0,as.Date(Sys.time()))
+  fv1=cfl[[1]]*0
   for(i in 1:n) {
     fv2=coredata(lastinvec(indl[[i]]))/indl[[i]]
     fv3=cfl[[i]]*fv2
@@ -156,7 +156,7 @@ pestat_multibench(cfl,indl)
 ## [1] 0.2844453
 ## 
 ## $ind.irr
-## [1] 0.2360117
+## [1] 0.2360049
 ## 
 ## $pme
 ## [1] 1.021251
